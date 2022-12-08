@@ -1,0 +1,44 @@
+/*
+You are required to enter a word that consists of x and y that denote the number of Zs and Os respectively. The input word is considered similar to word zoo if 2*x=y.
+Determine if the entered word is similar to word zoo.
+For example, words such as zzoooo and zzzoooooo are similar to word zoo but not the words such as zzooo and zzzooooo.
+
+Input format
+First line: A word that starts with several Zs and continues by several Os.
+Note: The maximum length of this word must be 20.
+
+Output format
+Print Yes if the input word can be considered as the string zoo otherwise, print No.
+*/
+
+import java.io.BufferedReader;
+import java.io.InputStreamReader;
+import java.io.BufferedReader;
+class Zoos {
+    public static void main(String args[] ) throws Exception {
+        char z = 'z';
+        char o = 'o';
+        int countZ = 0;
+        int countO = 0;
+ 
+        //BufferedReader
+        BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+        String file = br.readLine();                // Reading input from STDIN
+        //count O's and Z's
+        for(int i=0; i<file.length(); i++){
+            if(file.toLowerCase().charAt(i) == z && file.length() <= 20){
+                countZ++;
+            }
+            else if(file.toLowerCase().charAt(i) == o && file.length() <= 20){
+                countO++;
+            }
+            else break;
+        }
+        //Output
+        if(countZ * 2 == countO){
+            System.out.println("Yes");
+        }
+        else{
+            System.out.println("No");}
+    }
+}
